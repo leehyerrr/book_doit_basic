@@ -15,8 +15,8 @@ export type ArrowComponentProps = {
 //   );
 // }
 
-const ArrowComponent: FC<ArrowComponentProps> = (props) => {
-  const { href, text } = props;
+const ArrowComponent: FC<ArrowComponentProps> = ({ href, text }) => {
+  // const { href, text } = props;
   return (
     <li>
       <a href={href}>
