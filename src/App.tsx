@@ -10,15 +10,14 @@ import ArrayState from './pages/ArrayState';
 export default function App() {
   return (
     <div>
-      {/* <ArrayState />
+      <ArrayState />
       <ObjectState />
       <BasicForm />
       <HigherOrderRadioInputTest />
       <RadioInputTest />
       <ShowHideModal />
       <InputTest />
-      <NumberState /> */}
-      <h1>ddd</h1>
+      <NumberState />
     </div>
   );
 }

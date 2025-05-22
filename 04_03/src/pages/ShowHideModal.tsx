@@ -1,14 +1,14 @@
-import { useCallback } from 'react';
-import { Title, Subtitle } from '../components';
-import { Button, Modal, ModalContent, ModalAction } from '../theme/daisyui';
-import { useToggle } from '../hooks';
-import * as D from '../data';
+import {useCallback} from 'react'
+import {Title, Subtitle} from '../components'
+import {Button, Modal, ModalContent, ModalAction} from '../theme/daisyui'
+import {useToggle} from '../hooks'
+import * as D from '../data'
 
 export default function ShowHideModal() {
-  const [open, toggleOpen] = useToggle(false);
+  const [open, toggleOpen] = useToggle(false)
   const onAccept = useCallback(() => {
-    toggleOpen();
-  }, [toggleOpen]);
+    toggleOpen()
+  }, [toggleOpen])
 
   return (
     <section className="mt-4">
@@ -19,7 +19,9 @@ export default function ShowHideModal() {
         </Button>
       </div>
       <Modal open={open}>
-        <ModalContent closeIconClassName="btn-primary btn-outline" onCloseIconClicked={toggleOpen}>
+        <ModalContent
+          closeIconClassName="btn-primary btn-outline"
+          onCloseIconClicked={toggleOpen}>
           <Subtitle>Modal</Subtitle>
           <p>{D.randomParagraphs()}</p>
           <ModalAction>
@@ -31,5 +33,5 @@ export default function ShowHideModal() {
         </ModalContent>
       </Modal>
     </section>
-  );
+  )
 }

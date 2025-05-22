@@ -1,20 +1,19 @@
-import type { ChangeEvent } from 'react';
-import { useState, useCallback } from 'react';
-import { Title } from '../components';
-import { Input } from '../theme/daisyui';
+import type {ChangeEvent} from 'react'
+import {useState, useCallback} from 'react'
+import {Title} from '../components'
+import {Input} from '../theme/daisyui'
 
 export default function InputTest() {
-  const [value, setValue] = useState('');
-  const [checked, setChecked] = useState<boolean>(false);
+  const [value, setValue] = useState('')
+  const [checked, setChecked] = useState<boolean>(false)
 
   const onChangeValue = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    setValue((notUsed) => e.target.value);
-  }, []);
+    setValue(notUsed => e.target.value)
+  }, [])
 
   const onChangeChecked = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    // setChecked((notUsed) => e.target.checked);
-    setChecked(e.target.checked); //굳이 함수형 쓸 필요가 없음..
-  }, []);
+    setChecked(notUsed => e.target.checked)
+  }, [])
 
   return (
     <section className="mt-4">
@@ -34,5 +33,5 @@ export default function InputTest() {
         />
       </div>
     </section>
-  );
+  )
 }

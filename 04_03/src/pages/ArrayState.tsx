@@ -1,22 +1,28 @@
-import { useCallback, useState, useMemo } from 'react';
-import { Title, Div } from '../components';
-import { Icon } from '../theme/daisyui';
-import * as D from '../data';
+import {useCallback, useState, useMemo} from 'react'
+import {Title, Div} from '../components'
+import {Icon} from '../theme/daisyui'
+import * as D from '../data'
 
 export default function ArrayState() {
-  const [images, setImages] = useState<string[]>([]);
+  const [images, setImages] = useState<string[]>([])
   const addImage = useCallback(
-    () => setImages((images) => [D.randomImage(200, 100, 50), ...images]),
-    [],
-  );
-  const clearImages = useCallback(() => setImages((notUsed) => []), []);
+    () => setImages(images => [D.randomImage(200, 100, 50), ...images]),
+    []
+  )
+  const clearImages = useCallback(() => setImages(notUsed => []), [])
   const children = useMemo(
     () =>
       images.map((image, index) => (
-        <Div key={index} src={image} className="w-1/5 m-2" height="5rem" minHeight="5rem" />
+        <Div
+          key={index}
+          src={image}
+          className="w-1/5 m-2"
+          height="5rem"
+          minHeight="5rem"
+        />
       )),
-    [images],
-  );
+    [images]
+  )
   return (
     <section className="mt-4">
       <Title>ArrayState</Title>
@@ -35,5 +41,5 @@ export default function ArrayState() {
       </div>
       <div className="flex flex-wrap mt-4">{children}</div>
     </section>
-  );
+  )
 }

@@ -1,16 +1,16 @@
-import { useState, useCallback } from 'react';
-import { Title } from '../components';
-import { Icon } from '../theme/daisyui';
+import {useState, useCallback} from 'react'
+import {Title} from '../components'
+import {Icon} from '../theme/daisyui'
 
 export default function NumberState() {
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState<number>(0)
 
   const increment = useCallback(() => {
-    setCount(count + 1);
-  }, [count]);
+    setCount(count + 1)
+  }, [count])
   const decrement = useCallback(() => {
-    setCount(count - 1);
-  }, [count]);
+    setCount(count - 1)
+  }, [count])
 
   //prettier-ignore
   return (
