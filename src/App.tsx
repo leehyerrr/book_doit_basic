@@ -1,32 +1,24 @@
-import { useClock } from './hooks';
-import Clock from './pages/Clock';
+import NumberState from './pages/NumberState';
+import InputTest from './pages/InputTest';
+import ShowHideModal from './pages/ShowHideModal';
+import RadioInputTest from './pages/RadioInputTest';
+import HigherOrderRadioInputTest from './pages/HigherOrderRadioInputTest';
+import BasicForm from './pages/BasicForm';
+import ObjectState from './pages/ObjectState';
+import ArrayState from './pages/ArrayState';
 
 export default function App() {
-  const today = useClock();
-  return <Clock today={today} />;
+  return (
+    <div>
+      {/* <ArrayState />
+      <ObjectState />
+      <BasicForm />
+      <HigherOrderRadioInputTest />
+      <RadioInputTest />
+      <ShowHideModal />
+      <InputTest />
+      <NumberState /> */}
+      <h1>ddd</h1>
+    </div>
+  );
 }
-
-//틀린코드 // state를 변경시키지 않으면 재렌더링 안됨
-// export default function App() {
-//   let today = new Date();
-//   const id = setInterval(() => {
-//     today = new Date();
-//   });
-//   return <div>{today}</div>;
-// }
-
-//다른방법
-// import { useEffect, useState } from 'react';
-
-// export default function App() {
-//   const [today, setToday] = useState(new Date());
-
-//   useEffect(() => {
-//     const id = setInterval(() => {
-//       setToday(new Date());
-//     }, 1000); // 1초마다 갱신
-//     return () => clearInterval(id); // 컴포넌트 언마운트 시 인터벌 제거
-//   }, []);
-
-//   return <div>{today.toLocaleTimeString()}</div>;
-// }
